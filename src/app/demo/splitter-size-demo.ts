@@ -4,4 +4,7 @@ import { Component } from '@angular/core';
     selector: 'splitter-size-demo',
     templateUrl: './splitter-size-demo.html'
 })
-export class SplitterSizeDemo {}
+export class SplitterSizeDemo {
+  editorOptions = {theme: 'vs-dark', language: 'javascript', autoLayout: true};
+  code: string= 'function x() {\nconsole.log("Hello world!");\n}';
+}

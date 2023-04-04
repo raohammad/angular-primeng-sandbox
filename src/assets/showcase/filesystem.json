@@ -1,0 +1,57 @@
+{
+  "data": [
+    {
+      "data": {
+        "name": "Applications",
+        "size": "200mb",
+        "type": "Folder"
+      },
+      "children": [
+        {
+          "data": {
+            "name": "Angular",
+            "size": "25mb",
+            "type": "Folder"
+          }
+        },
+        {
+          "data": {
+            "name": "editor.app",
+            "size": "25mb",
+            "type": "Application"
+          }
+        },
+        {
+          "data": {
+            "name": "settings.app",
+            "size": "50mb",
+            "type": "Application"
+          }
+        }
+      ]
+    },
+    {
+      "data": {
+        "name": "Cloud",
+        "size": "20mb",
+        "type": "Folder"
+      },
+      "children": [
+        {
+          "data": {
+            "name": "backup-1.zip",
+            "size": "10mb",
+            "type": "Zip"
+          }
+        },
+        {
+          "data": {
+            "name": "backup-2.zip",
+            "size": "10mb",
+            "type": "Zip"
+          }
+        }
+      ]
+    }
+  ]
+}

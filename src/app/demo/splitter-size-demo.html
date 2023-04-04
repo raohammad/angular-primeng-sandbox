@@ -1,10 +1,90 @@
-<div class="card">
-    <p-splitter [panelSizes]="[25, 75]" [style]="{ height: '300px' }" styleClass="mb-5">
-        <ng-template pTemplate>
-            <div class="col flex align-items-center justify-content-center">Panel 1</div>
-        </ng-template>
-        <ng-template pTemplate>
-            <div class="col flex align-items-center justify-content-center">Panel 2</div>
-        </ng-template>
-    </p-splitter>
+<div class="min-h-screen flex surface-ground">
+    <div class="min-h-screen flex flex-column relative flex-auto">
+        <div class="p-0 flex flex-auto overflow-y-auto">
+            <div class="flex-auto">
+                <p-splitter stateKey="flickedit" layout="horizontal" stateStorage="local" [style]="{ height: '100%' }"
+                    [panelSizes]="[25, 75]" [minSizes]="[20, 50]">
+                    <ng-template pTemplate>
+                        <div class="col flex align-items-center justify-content-center">Panel 1</div>
+                    </ng-template>
+                    <ng-template pTemplate>
+                        <p-splitter stateStorage="local" layout="vertical" [panelSizes]="[40, 60]"
+                            [minSizes]="[10, 10]">
+                            <ng-template pTemplate>
+
+                                <!-- <div class="grid"> -->
+                                <div class="col-9 p-1">
+                                    <div
+                                        class="shadow-0 border-round surface-card mb-0 h-full flex-column justify-content-between flex">
+                                        <div class="p-1">
+                                            <div class="flex align-items-center mb-2">
+                                                <span
+                                                    class="inline-flex border-circle align-items-center justify-content-center bg-green-100 mr-3"
+                                                    style="width:38px;height:38px">
+                                                    <i class="pi pi-code text-xl text-green-600"></i>
+                                                </span>
+                                                <span class="text-900 font-medium text-xl">Query Editor</span>
+                                            </div>
+
+                                            <ngx-monaco-editor class="my-code-editor" [options]="editorOptions"
+                                                [(ngModel)]="code"></ngx-monaco-editor>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-3 p-1">
+                                    <div
+                                        class="shadow-0 border-round surface-card mb-3 h-full flex-column justify-content-between flex">
+                                        <div class="p-1">
+                                            <div class="flex align-items-center">
+                                                <span
+                                                    class="inline-flex border-circle align-items-center justify-content-center bg-green-100 mr-3"
+                                                    style="width:38px;height:38px">
+                                                    <i class="pi pi-eye text-green-600"></i>
+                                                </span>
+                                                <span class="text-900 font-medium">query monitoring</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                            <ng-template pTemplate>
+                                <div style="height:100%;width: 100%">
+                                    <p-tabView styleClass="tabview-custom">
+                                        <p-tabPanel>
+                                            <ng-template pTemplate="header">
+                                                <i class="pi pi-calendar mr-2"></i>
+                                                <span>Output</span>
+                                            </ng-template>
+                                            <p>
+                                                <!-- {{queryMessage}} -->
+                                                some message
+                                            </p>
+                                        </p-tabPanel>
+                                        <p-tabPanel header="Header II">
+                                            <ng-template pTemplate="header">
+                                                <i class="pi pi-table mr-2"></i>
+                                                <span>Tabular Data</span>
+                                            </ng-template>
+                                            <jhi-tabular></jhi-tabular>
+                                        </p-tabPanel>
+                                        <p-tabPanel header="Header III">
+                                            <ng-template pTemplate="header">
+                                                <i class="pi pi-chart-line mr-2"></i>
+                                                <span>Chart</span>
+                                            </ng-template>
+                                            <div style="height: 100%; width: 100%;">
+                                                <jhi-barchart></jhi-barchart>
+                                            </div>
+                                        </p-tabPanel>
+                                    </p-tabView>
+                                </div>
+                            </ng-template>
+                        </p-splitter>
+                    </ng-template>
+                </p-splitter>
+
+            </div>
+        </div>
+    </div>
 </div>

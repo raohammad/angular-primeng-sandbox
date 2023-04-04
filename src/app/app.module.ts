@@ -20,7 +20,6 @@ import { ChartModule } from 'primeng/chart';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ChipModule } from 'primeng/chip';
 import { ChipsModule } from 'primeng/chips';
-import { CodeHighlighterModule } from 'primeng/codehighlighter';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ColorPickerModule } from 'primeng/colorpicker';
 import { ContextMenuModule } from 'primeng/contextmenu';
@@ -95,6 +94,10 @@ import { AnimateModule } from 'primeng/animate';
 import { CardModule } from 'primeng/card';
 import { BlockUIModule } from 'primeng/blockui';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
+import { TabularComponent } from './demo/components/tabular/tabular.component';
+import { ProductService } from './demo/components/tabular/product.service';
+import { BarchartComponent } from './demo/components/barchart/barchart.component';
 
 
 @NgModule({
@@ -118,7 +121,6 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     CheckboxModule,
     ChipsModule,
     ChipModule,
-    CodeHighlighterModule,
     ColorPickerModule,
     ConfirmDialogModule,
     ContextMenuModule,
@@ -192,10 +194,11 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     TreeTableModule,
     AnimateModule,
     CardModule,
+    MonacoEditorModule.forRoot(), // use forRoot() in main app module only.
     RouterModule.forRoot([{ path: '', component: SplitterSizeDemo }])],
-    declarations: [ SplitterSizeDemo ],
+    declarations: [ SplitterSizeDemo, TabularComponent, BarchartComponent ],
     bootstrap: [ SplitterSizeDemo ],
-    providers: [  ]
+    providers: [ ProductService ]
 })
 
 export class AppModule {}

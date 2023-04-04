@@ -1,2 +1,7 @@
 # angular-primeng-sandbox
-Created with CodeSandbox
+
+    git clone <this-repo>
+    npm i
+    npm start
+
+

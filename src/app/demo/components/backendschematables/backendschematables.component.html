@@ -1,0 +1,55 @@
+<p-treeTable #tt [value]="files" [columns]="cols" styleClass="p-treetable-sm">
+    <ng-template pTemplate="caption">
+      <div style="text-align: left">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input
+            #filterinput
+            type="text"
+            pInputText
+            size="20"
+            placeholder="Filter"
+            (input)="tt.filterGlobal(filterinput.value, 'contains')"
+            style="width:auto"
+          />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of cols">
+          {{ col.header }}
+        </th>
+      </tr>
+      <!-- <tr>
+        <th *ngFor="let col of cols">
+          <input
+            #filterinputcols
+            pInputText
+            type="text"
+            class="w-full"
+            (input)="
+              tt.filter(filterinputcols.value, col.field, col.filterMatchMode)
+            "
+          />
+        </th>
+      </tr> -->
+    </ng-template>
+    <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+      <tr>
+        <td *ngFor="let col of cols; let i = index">
+          <p-treeTableToggler
+            [rowNode]="rowNode"
+            *ngIf="i == 0"
+          ></p-treeTableToggler>
+          {{ rowData[col.field] }}
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td [attr.colspan]="cols.length">No data found.</td>
+      </tr>
+    </ng-template>
+  </p-treeTable>
+  
