@@ -82,10 +82,12 @@
             "builder": "@angular-devkit/build-angular:dev-server",
             "configurations": {
               "production": {
-                "browserTarget": "example-app:build:production"
+                "browserTarget": "example-app:build:production",
+                "disableHostCheck": true
               },
               "development": {
-                "browserTarget": "example-app:build:development"
+                "browserTarget": "example-app:build:development",
+                "disableHostCheck": true
               }
             },
             "defaultConfiguration": "development"
