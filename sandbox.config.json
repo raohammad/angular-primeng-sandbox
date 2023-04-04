@@ -1,0 +1,7 @@
+{
+  "container": {
+    "node": "16"
+  },
+  "infiniteLoopProtection": false,
+  "template": "node"
+}
