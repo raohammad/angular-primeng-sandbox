@@ -8,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class BarchartComponent implements OnInit {
   basicData: any;
   basicOptions: any;
-
+  cHeight: string| null;
+  cWidth: string| null;
   constructor() {}
 
   ngOnInit(): void {
+    this.cHeight = '80%';
+    this.cWidth = "80%";
+
     this.basicData = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
