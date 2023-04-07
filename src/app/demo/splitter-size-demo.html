@@ -25,11 +25,11 @@
                                                 </span>
                                                 <span class="text-900 font-medium text-xl">Query Editor</span>
                                             </div>
-
-                                            <ngx-monaco-editor class="my-code-editor" [options]="editorOptions"
+</div>
+                                            <ngx-monaco-editor class="my-code-editor h-full" [options]="editorOptions"
                                                 [(ngModel)]="code"></ngx-monaco-editor>
 
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-3 p-1">
@@ -73,9 +73,9 @@
                                                 <i class="pi pi-chart-line mr-2"></i>
                                                 <span>Chart</span>
                                             </ng-template>
-                                            <div style="height: 100%; width: 100%;">
+                                            <!-- <div style="height: 100%; width: 100%;"> -->
                                                 <jhi-barchart></jhi-barchart>
-                                            </div>
+                                            <!-- </div> -->
                                         </p-tabPanel>
                                     </p-tabView>
                                 </div>
